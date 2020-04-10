@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- robot configuration -->
+	<arg name="model_type"     default="jaime_asus"/>
+
+    <!-- GUI -->
+	<arg name="rviz"           default="true"/>
+    <arg name="gazebo_gui"     default="true"/>
+
+    <!-- robot simulation -->
+	<arg name="worldname"  default="empty"/>
+    <arg name="use_sim_time"           default="true"/>
+
+    <!-- Load the URDF Model -->
+    <include file="$(find jaime_description)/launch/load_model.launch">
+        <arg name="model_type" value="$(arg model_type)"/>
+    </include >
+
+    <!-- Launch Gazebo with empty world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find jaime_gazebo)/worlds/$(arg worldname).world"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="gui" value="$(arg gazebo_gui)"/>
+    </include>
+    
+    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" 
+    respawn="false" output="screen" 
+    args="-urdf -x 0 -y 1.0 -model jaime_model -param robot_description">
+    </node>
+
+
+    <!-- TODO Mover -->
+    <!-- PointCloud to LaserScan -->
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" output="screen" >
+      <remap from="cloud_in" to="/xbox_kinetic/depth/points"/>
+      <remap from="scan" to="/xbox_kinetic/scan" />
+      <rosparam>
+        target_frame: camara_profundidad
+        transform_tolerance: 0.01
+        min_height: 0.0
+        max_height: 1.0
+
+        angle_min: -1.5708
+        angle_max: 1.5708
+        angle_increment: 0.0087
+        scan_time: 0.3333
+        range_min: 0.45
+        range_max: 2.4
+        use_inf: true
+
+        #concurrency_level affects number of pc queued for processing and the number of threadsused
+        # 0: Detect number of cores
+        # 1: Single threaded
+        # 2: inf : Parallelism level
+        concurrency_level: 1
+      </rosparam>
+    </node>
+
+    
+
+
+
+</launch>
