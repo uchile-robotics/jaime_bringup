@@ -23,39 +23,30 @@
         <arg name="gui" value="$(arg gazebo_gui)"/>
     </include>
     
-    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" 
-    respawn="false" output="screen" 
-    args="-urdf -x 0 -y 1.0 -model jaime_model -param robot_description">
-    </node>
 
+    <!-- BEGIN ROBOT 1-->
+    <group ns="jaime">
+        <param name="tf_prefix" value="jaime_tf" />
+        <include file="$(find jaime_gazebo)/launch/robot.launch" >
+        <arg name="init_pose"   value="-x 1 -y 1 -z 0"/>
+        <arg name="init_pose_x" value="1"/>
+        <arg name="init_pose_y" value="1"/>
+        <arg name="robot_name"  value="jaime"/>
+        </include>
+    </group>
 
-    <!-- TODO Mover -->
-    <!-- PointCloud to LaserScan -->
-    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" output="screen" >
-      <remap from="cloud_in" to="/xbox_kinetic/depth/points"/>
-      <remap from="scan" to="/xbox_kinetic/scan" />
-      <rosparam>
-        target_frame: camara_profundidad
-        transform_tolerance: 0.01
-        min_height: 0.0
-        max_height: 1.0
+    <!-- BEGIN ROBOT 2 -->
+    <group ns="robot2">
+        <param name="tf_prefix" value="robot2_tf" />
+        <include file="$(find jaime_gazebo)/launch/robot.launch" >
+        <arg name="init_pose"   value="-x -1 -y 1 -z 0"/>
+        <arg name="init_pose_x" value="-1"/>
+        <arg name="init_pose_y" value="1"/>
+        <arg name="robot_name"  value="robot2"/>
+        </include>
+    </group>
 
-        angle_min: -1.5708
-        angle_max: 1.5708
-        angle_increment: 0.0087
-        scan_time: 0.3333
-        range_min: 0.45
-        range_max: 2.4
-        use_inf: true
-
-        #concurrency_level affects number of pc queued for processing and the number of threadsused
-        # 0: Detect number of cores
-        # 1: Single threaded
-        # 2: inf : Parallelism level
-        concurrency_level: 1
-      </rosparam>
-    </node>
+    
 
     
 
