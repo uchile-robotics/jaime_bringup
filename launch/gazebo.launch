@@ -18,7 +18,7 @@
 
     <!-- Launch Gazebo with empty world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find jaime_gazebo)/worlds/$(arg worldname).world"/>
+        <arg name="world_name" value="$(find uchile_gazebo)/worlds/$(arg worldname).world"/>
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
         <arg name="gui" value="$(arg gazebo_gui)"/>
     </include>
@@ -28,14 +28,14 @@
     <group ns="jaime">
         <param name="tf_prefix" value="jaime_tf" />
         <include file="$(find jaime_gazebo)/launch/robot.launch" >
-        <arg name="init_pose"   value="-x 1 -y 1 -z 0"/>
-        <arg name="init_pose_x" value="1"/>
-        <arg name="init_pose_y" value="1"/>
+        <arg name="init_pose"   value="-x 0 -y 0 -z 0"/>
+        <arg name="init_pose_x" value="0"/>
+        <arg name="init_pose_y" value="0"/>
         <arg name="robot_name"  value="jaime"/>
         </include>
     </group>
 
-    <!-- BEGIN ROBOT 2 -->
+    <!-- BEGIN ROBOT 2 
     <group ns="robot2">
         <param name="tf_prefix" value="robot2_tf" />
         <include file="$(find jaime_gazebo)/launch/robot.launch" >
@@ -45,6 +45,7 @@
         <arg name="robot_name"  value="robot2"/>
         </include>
     </group>
+    -->
 
     
 
