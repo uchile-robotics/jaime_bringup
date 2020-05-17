@@ -33,6 +33,7 @@
         <arg name="init_pose_y" value="0"/>
         <arg name="robot_name"  value="jaime"/>
         </include>
+        <include file="$(find kobuki_keyop)/launch/keyop.launch"/>
     </group>
 
     <!-- BEGIN ROBOT 2 
