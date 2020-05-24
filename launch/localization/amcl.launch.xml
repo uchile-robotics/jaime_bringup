@@ -2,11 +2,14 @@
 
     <arg name="map_name"  default="map"/>
 
-    <!-- static map server -->
+    <!-- static map server 
     <include file="$(find uchile_maps)/launch/map_server.launch">
         <arg name="map_name" value="$(arg map_name)"/>
 	<arg name="robot" value="jaime"/>
     </include>
+    -->
+    <node pkg="map_server" type="map_server" name="map_server"
+		respawn="true" args="$(find uchile_maps)/maps/$(arg map_name).yaml"/>
 
     <!-- Map analyzer -->
     <!--include file="$(find uchile_maps)/launch/map_analyzer.launch"/-->
