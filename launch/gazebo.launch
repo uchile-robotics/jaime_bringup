@@ -25,7 +25,7 @@
     
 
     <!-- BEGIN ROBOT 1-->
-    <group ns="jaime">
+    <group ns="/jaime/">
         <param name="tf_prefix" value="jaime_tf" />
         <include file="$(find jaime_gazebo)/launch/robot.launch" >
         <arg name="init_pose"   value="-x 0 -y 0 -z 0"/>
@@ -33,7 +33,8 @@
         <arg name="init_pose_y" value="0"/>
         <arg name="robot_name"  value="jaime"/>
         </include>
-        <include file="$(find kobuki_keyop)/launch/keyop.launch"/>
+        <include file="$(find jaime_joy)/launch/joysticks.launch"/>
+        <include file="$(find uchile_cmd_vel_mux)/launch/mux_jaime.launch"/>  
     </group>
 
     <!-- BEGIN ROBOT 2 
