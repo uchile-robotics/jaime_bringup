@@ -11,12 +11,12 @@
     <include file="$(find uchile_maps)/launch/map_analyzer.launch"/>
 
     <!-- fake localization -->
-    <node pkg="fake_localization" type="fake_localization" name="fake_localization" ns="/bender/nav/">
-        <remap from="base_pose_ground_truth" to="/bender/nav/odom"/>
-        <remap from="initialpose"            to="/bender/nav/initialpose"/>
-        <remap from="amcl_pose"              to="/bender/nav/amcl_pose"/>
-        <remap from="particlecloud"          to="/bender/nav/particlecloud"/>
-        <rosparam file="$(find bender_bringup)/params/localization/fake.yaml" command="load"/> 
+    <node pkg="fake_localization" type="fake_localization" name="fake_localization" ns="/jaime/nav/">
+        <remap from="base_pose_ground_truth" to="/jaime/nav/odom"/>
+        <remap from="initialpose"            to="/jaime/nav/initialpose"/>
+        <remap from="amcl_pose"              to="/jaime/nav/amcl_pose"/>
+        <remap from="particlecloud"          to="/jaime/nav/particlecloud"/>
+        <rosparam file="$(find jaime_bringup)/params/localization/fake.yaml" command="load"/> 
     </node>
 
 </launch>

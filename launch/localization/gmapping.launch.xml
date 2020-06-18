@@ -3,10 +3,10 @@
     <arg name="map_name"  default="DO-NOT-USE-THIS--JUST-FOR-COMPATIBILITY"/>
 
     <!-- gmapping para slam-->
-    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" ns="/bender/nav/" respawn="false">
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" ns="/jaime/nav/" respawn="false">
 
         <!-- Parameters -->
-        <rosparam file="$(find bender_bringup)/params/localization/gmapping.yaml" command="load"/>
+        <rosparam file="$(find jaime_bringup)/params/localization/gmapping.yaml" command="load"/>
 
         <!-- Slam parameters (for orange hokuyo laser!)-->
         <param name="maxUrange" type="double" value="28"/>
@@ -18,7 +18,7 @@
         -->
 
         <!-- Remappings-->
-        <remap from="scan" to="/bender/sensors/laser_front/scan_filtered"/>
+        <remap from="scan" to="/jaime/sensors/laser_front/scan_filtered"/>
         <remap from="map" to="/map"/>
         <remap from="map_metadata" to="/map_metadata"/>
         
