@@ -16,7 +16,7 @@
 
     <!-- amcl -->
     <node pkg="amcl" type="amcl" name="amcl" ns="/jaime/nav/" respawn="true" output="screen">
-        <remap from="scan" to="amcl/scan"/>
+        <remap from="/jaime/xbox_kinetic/scan" to="/jaime/nav/scan"/>
         <remap from="map" to="/map"/>
         <rosparam file="$(find jaime_bringup)/params/localization/amcl.yaml" command="load"/>
     </node>
