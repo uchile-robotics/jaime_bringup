@@ -12,14 +12,18 @@
 		respawn="true" args="$(find uchile_maps)/maps/$(arg map_name).yaml"/>
 
     <!-- Map analyzer -->
-    <!--include file="$(find uchile_maps)/launch/map_analyzer.launch"/-->
+    <!--include file="$(find uchile_maps)/launch/map_analyzer.launch"
+    ns="/jaime/nav/"
+    /-->
 
     <!-- amcl -->
-    <node pkg="amcl" type="amcl" name="amcl" ns="/jaime/nav/" respawn="true" output="screen">
+    <node pkg="amcl" type="amcl" name="amcl" respawn="true" output="screen">
         <!--remap from="/jaime/xbox_kinetic/scan" to="/jaime/nav/scan"/-->
-        <remap from="/jaime/xbox_kinetic/scan" to="/jaime/nav/scan"/>
+        <remap from="/scan" to="/jaime/xbox_kinetic/scan"/>
         <remap from="map" to="/map"/>
         <rosparam file="$(find jaime_bringup)/params/localization/amcl.yaml" command="load"/>
     </node>
+
+
 
 </launch>

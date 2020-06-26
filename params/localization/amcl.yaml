@@ -163,11 +163,11 @@ odom_alpha5: 1.0
 
 # Which frame to use for odometry. 
 # (default: "odom")
-odom_frame_id: /jaime/odom
+odom_frame_id: /jaime_tf/odom
 
 # Which frame to use for the robot base 
 # (default: "base_link")
-base_frame_id: /jaime/base_link
+base_frame_id: /jaime_tf/base_link
 
 # The name of the coordinate frame published by the localization system 
 # (default: "map")
