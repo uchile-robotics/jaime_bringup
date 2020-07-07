@@ -18,13 +18,18 @@
         <!--Kobuki -->
         <include file="$(find kobuki_node)/launch/minimal.launch"/>
         <include file="$(find jaime_joy)/launch/joysticks.launch"/>
-        <include file="$(find uchile_cmd_vel_mux)/launch/mux_jaime.launch"/>  
+        <include file="$(find uchile_cmd_vel_mux)/launch/mux_jaime.launch"/>
+	<!--<include file="$(find arduino_controller)/launch/arduino_controller.launch"/> -->  
     </group>
+
+	<include file="$(find arduino_controller)/launch/arduino_controller.launch"/>
+	<include file="$(find battery_info)/launch/battery.launch"/>
+
     <!-- PointCloud to LaserScan 
     <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" output="screen" >
-    <remap from="cloud_in" to="xbox_kinetic/depth/points"/>
+    <remap from="cloud_in" to="/camera/depth/image_rect_raw"/>
     <remap from="scan" to="xbox_kinetic/scan" />
-    <param name="target_frame" value="$(arg robot_name)_tf/camara_profundidad"/>
+    <param name="target_frame" value="camera_depth_optical_frame"/>
     <rosparam>
         transform_tolerance: 0.01
         min_height: 0.0
