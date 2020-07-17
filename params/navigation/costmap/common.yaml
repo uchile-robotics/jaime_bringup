@@ -16,7 +16,7 @@ footprint_padding: 0.01
 
 # The name of the frame for the base link of the robot.
 # robot_base_frame (string, default: "base_link")
-robot_base_frame: /jaime/base_link
+robot_base_frame: /jaime_tf/base_link
 
 #   Specifies the delay in transform (tf) data that is tolerable in seconds.
 #   This parameter serves as a safeguard to losing a link in the tf tree while
@@ -107,9 +107,9 @@ obstacle_layer:
 
   # required to work
   laser_front_sensor: {
-    sensor_frame: /bender/sensors/laser_front_link,
+    sensor_frame: /jaime/sensors/laser_front_link,
     data_type: LaserScan,
-    topic: /bender/sensors/laser_front/scan_filtered,
+    topic: /jaime/sensors/laser_front/scan_filtered,
     expected_update_rate: 0.15, # works at 20 Hz
     observation_persistence: 0.0,
     marking: true,
@@ -123,9 +123,9 @@ obstacle_layer:
 
   # required to work
   laser_rear_sensor: {
-    sensor_frame: /bender/sensors/laser_rear_link,
+    sensor_frame: /jaime/sensors/laser_rear_link,
     data_type: LaserScan,
-    topic: /bender/sensors/laser_rear/scan_filtered,
+    topic: /jaime/sensors/laser_rear/scan_filtered,
     expected_update_rate: 0.2, # works at 10 Hz
     observation_persistence: 0.0,
     marking: true,
@@ -139,9 +139,9 @@ obstacle_layer:
 
   # rgbd_head to laserscan
   rgbd_head_scan_sensor: {
-    sensor_frame: /bender/sensors/rgbd_head_laser_link,
+    sensor_frame: /jaime/sensors/rgbd_head_laser_link,
     data_type: LaserScan,
-    topic: /bender/sensors/rgbd_head/depth/scan,
+    topic: /jaime/sensors/rgbd_head/depth/scan,
     expected_update_rate: 0.0,
     observation_persistence: 0.0,
     marking: true,

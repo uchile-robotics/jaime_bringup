@@ -84,8 +84,8 @@ first_map_only: true
 
 # min/max scan range to be considered; -1.0 will cause the laser's reported min/max range to be used. 
 # (default: -1, -1)
-laser_min_range: -1.0
-laser_max_range: -1.0
+laser_min_range: 0.3
+laser_max_range: 2.4
 
 # How many evenly-spaced beams in each scan to be used when updating the filter. 
 # (default: 30)
@@ -143,23 +143,23 @@ odom_model_type: diff-corrected
 
 # Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha1: 0.05
+odom_alpha1: 0.2
 
 # Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha2: 0.005
+odom_alpha2: 0.2
 
 # Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha3: 0.005
+odom_alpha3: 0.2
 
 # Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha4: 0.1
+odom_alpha4: 0.2
 
 # Translation-related noise parameter (only used if model is "omni"). 
 # (default: 0.2)
-odom_alpha5: 1.0
+odom_alpha5: 0.2
 
 # Which frame to use for odometry. 
 # (default: "odom")

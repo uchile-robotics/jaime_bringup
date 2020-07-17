@@ -1,5 +1,5 @@
 
-/jaime/nav/move_base:
+/jaime/nav/move_base/cmd_vel:
 
   recovery_behaviors: [
     {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery},
@@ -67,3 +67,5 @@
   # The rate [Hz] at which to run the global planning loop.
   # If the frequency is set to 0.0, the global planner will only run when a new goal is received
   # or the local planner reports that its path is blocked.
+
+
