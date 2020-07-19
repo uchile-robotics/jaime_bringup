@@ -1,0 +1,39 @@
+<launch>
+<!-- Nodelet manager for this pipeline -->
+  <node pkg="nodelet" type="nodelet" args="manager"
+        name="nodelet_manager" output="screen"/>
+
+<node pkg="nodelet" type="nodelet" name="cloudify"
+        args="load depth_image_proc/point_cloud_xyz nodelet_manager --no-bond">
+    <remap from="image_rect" to="camera/depth/image_rect_raw"/>
+    <remap from="points" to="camera/depth/points"/>
+    <remap from="camera_info" to="camera/depth/camera_info"/>
+  </node>
+
+   
+<node pkg="nodelet" type="nodelet" name="pointcloud_to_laserscan_node" args="load pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet nodelet_manager --no-bond" 
+output="screen" >
+
+ <remap from="cloud_in" to="/camera/depth/points"/>
+    <remap from="scan" to="xbox_kinetic/scan" />
+    <param name="target_frame" value="jaime_tf/link_palo"/>
+    <rosparam>
+        min_height: 0.0
+        max_height: 1.0
+
+        angle_min: -1.5708
+        angle_max: 1.5708
+        angle_increment: 0.0087
+        scan_time: 0.3333
+        range_min: 0.45
+        range_max: 5.0
+        use_inf: true
+
+        #concurrency_level affects number of pc queued for processing and the n$
+        # 0: Detect number of cores
+        # 1: Single threaded
+        # 2: inf : Parallelism level
+        concurrency_level: 0
+    </rosparam>
+    </node>
+</launch>
