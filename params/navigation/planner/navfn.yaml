@@ -1,5 +1,5 @@
 
-/jaime/nav/move_base:
+/jaime_tf/nav/move_base:
  base_global_planner: "navfn/NavfnROS"
 
 # ---- global planner ----

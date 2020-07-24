@@ -1,5 +1,5 @@
 
-/bender/nav/move_base:
+/jaime_tf/nav/move_base:
  base_local_planner: "dwa_local_planner/DWAPlannerROS"
 
 # ----- Local planner -----

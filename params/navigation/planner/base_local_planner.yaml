@@ -1,5 +1,5 @@
 
-/jaime/nav/move_base:
+/jaime_tf/nav/move_base:
  base_local_planner: "base_local_planner/TrajectoryPlannerROS"
 
 # ----- Local planner -----
@@ -60,7 +60,7 @@ TrajectoryPlannerROS:
  dwa: false  # whether to use DWA(recommended) or Trajectory Rollout
 
  publish_cost_grid_pc: true # publish cost grids (goal, path, occ, total)
- global_frame_id: jaime_tf/odom
+ global_frame_id: /jaime_tf/odom
 
  # Oscillation Prevention Parameters
  # - - - - - - - - - - - - - - - -
