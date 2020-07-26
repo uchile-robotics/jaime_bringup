@@ -1,0 +1,49 @@
+#footprint: [ [0.231,0.000],[0.115,0.200],[-0.115,0.200],[-0.231,0.000],[-0.115,-0.200],[0.115,-0.200]]
+
+acc_lim_x: 0.2
+acc_lim_th: 1
+sim_time: 3
+sim_granularity: 0.025
+vx_samples: 3
+vtheta_samples: 20
+user_bias: 0.6
+occdist_scale: 0.1
+max_vel_x: 0.40
+min_vel_x: 0.05
+max_rotational_velocity: 2
+holonomic_robot: false
+safe_backwards: true
+world_model: costmap
+  
+local_costmap:
+  global_frame: jaime_tf/odom
+  robot_base_frame: jaime_tf/base_footprint
+  robot_radius: 0.2
+  plugins: 
+      - {name: obstacles,        type: "costmap_2d::VoxelLayer"}
+
+  update_frequency: 5.0
+  publish_frequency: 2.0
+  rolling_window: true
+  width: 5.0
+  height: 5.0
+  resolution: 0.1
+  z_resolution: 0.2
+  z_voxels: 8
+  #publish_voxel_map: true
+  footprint_padding: 0.0
+  max_obstacle_height: 1.5
+  obstacles:
+      footprint_clearing_enabled: false
+      observation_sources: camera_cloud
+      camera_cloud: {
+        data_type: PointCloud2, 
+        sensor_frame: jaime_tf/camera_depth_optical_frame, 
+        min_obstacle_height: 0.05,
+        clearing: true, 
+        marking: true, 
+        topic: /jaime/safety/point_cloud,
+        expected_update_rate: 0.5,
+        raytrace_range: 2
+      }
+

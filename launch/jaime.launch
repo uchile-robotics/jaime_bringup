@@ -35,57 +35,16 @@
 	</include>  
     </group>
 	<include file="$(find uchile_tf)/launch/transformers.launch"/>
-	<include file="$(find uchile_safety)/launch/safety_jaime.launch"/>
+	<!--<include file="$(find uchile_safety)/launch/safety_jaime.launch"/>-->
 
 	<include file="$(find arduino_controller)/launch/arduino_controller.launch"/>
 	<include file="$(find battery_info)/launch/battery.launch"/>
 
 	
 
-	<include file="$(find jaime_bringup)/launch/depth_to_laser.launch"/>
+	<include file="$(find jaime_bringup)/launch/safety_layer.launch"/>
 
-    <!-- PointCloud to LaserScan 
-    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" output="screen" >
-    <remap from="cloud_in" to="/camera/depth/image_rect_raw"/>
-    <remap from="scan" to="xbox_kinetic/scan" />
-    <param name="target_frame" value="camera_depth_optical_frame"/>
-    <rosparam>
-        transform_tolerance: 0.01
-        min_height: 0.0
-        max_height: 1.0
 
-        angle_min: -1.5708
-        angle_max: 1.5708
-        angle_increment: 0.0087
-        scan_time: 0.3333
-        range_min: 0.45
-        range_max: 2.4
-        use_inf: true
-
-        #concurrency_level affects number of pc queued for processing and the number of threadsused
-        # 0: Detect number of cores
-        # 1: Single threaded
-        # 2: inf : Parallelism level
-        concurrency_level: 1
-    </rosparam>
-    </node>
-    -->
-	<!-- <include file="$(find uchile_tf)/launch/tf.launch">
-		<arg name="use_gui"    value="false"/>
-		<arg name="model_type" value="$(arg model_type)"/>
-	</include> -->
-
-	<!-- Laser/Lasers -->
-	<!-- <include file="$(find bender_sensors)/launch/hokuyo/hokuyo_front.launch"/>
-	<include file="$(find bender_sensors)/launch/hokuyo/hokuyo_rear.launch"/> -->
-
-	
-
-	<!-- uchile_rqt_batteries -->
-	
-	<!--<include file="$(find uchile_rqt_batteries)/launch/notebook_battery.launch">
-		<arg name="name" value="nav"/>
-	</include> -->
 
 
 </launch>

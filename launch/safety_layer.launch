@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+  <group ns="/jaime/safety">
+          <!-- Depth to pointcloud conversion -->
+          <node pkg="depth_to_sampled_pointcloud" name="depth_to_sampled_pointcloud" type="depth_to_sampled_pointcloud.py" respawn="false">
+            <remap from="camera_info" to="camera/depth/camera_info" />
+            <remap from="depth_image_rect" to="camera/depth/image_rect_raw" />
+            <rosparam>
+                num_points: 1000
+                max_range: 3
+            </rosparam>
+          </node>
+
+          <!-- Safety layer -->
+          <node pkg="safe_teleop_base" name="safe_teleop_base" type="safe_teleop_base" respawn="false" output="screen">
+            <rosparam file="$(find jaime_bringup)/params/navigation/safety_layer.yaml" command="load" />
+            <remap from="~safe_vel" to="/jaime/nav/safety/cmd_vel" />
+            <remap from="base_velocity" to="/jaime/nav/mux/cmd_vel" />
+            <remap from="odom" to="/jaime/odom" />
+          </node>
+    
+  </group>
+
+
+
+</launch>
