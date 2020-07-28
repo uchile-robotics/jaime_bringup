@@ -30,20 +30,32 @@ local_costmap:
   resolution: 0.1
   z_resolution: 0.2
   z_voxels: 8
-  #publish_voxel_map: true
+  publish_voxel_map: true
   footprint_padding: 0.0
-  max_obstacle_height: 1.5
   obstacles:
       footprint_clearing_enabled: false
-      observation_sources: camera_cloud
+      observation_sources: "camera_cloud cloud_free"
+      #observation_sources: "camera_cloud"
       camera_cloud: {
         data_type: PointCloud2, 
         sensor_frame: jaime_tf/camera_depth_optical_frame, 
+        max_obstacle_height: 1.5,
         min_obstacle_height: 0.05,
-        clearing: true, 
+        clearing: false, 
         marking: true, 
         topic: /jaime/safety/point_cloud,
-        expected_update_rate: 0.5,
-        raytrace_range: 2
+        expected_update_rate: 0.2,
+        obstacle_range: 3.0,
+      }
+      cloud_free: {
+        data_type: PointCloud2, 
+        sensor_frame: jaime_tf/camera_depth_optical_frame, 
+        max_obstacle_height: 5,
+        min_obstacle_height: 0.0,
+        clearing: true, 
+        marking: false, 
+        topic: /jaime/safety/point_cloud,
+        expected_update_rate: 0.2,
+        raytrace_range: 15
       }
 
