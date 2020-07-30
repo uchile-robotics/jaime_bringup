@@ -16,7 +16,7 @@
             <rosparam file="$(find jaime_bringup)/params/navigation/safety_layer.yaml" command="load" />
             <remap from="~safe_vel" to="/jaime/nav/safety/cmd_vel" />
             <remap from="base_velocity" to="/jaime/nav/mux/cmd_vel" />
-            <remap from="odom" to="/jaime/odom" />
+            <remap from="/odom" to="/jaime/odom" />
           </node>
     
   </group>

@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
 <launch>
   <group ns="/jaime/safety">
-          <!-- Depth to pointcloud conversion -->
-          <node pkg="depth_to_sampled_pointcloud" name="depth_to_sampled_pointcloud" type="depth_to_sampled_pointcloud.py" respawn="false">
-            <remap from="camera_info" to="/camera/depth/camera_info" />
-            <remap from="depth_image_rect" to="/camera/depth/image_raw" />
+          <!-- Depth to sparse pointcloud conversion -->
+          <!-- Nodelet manager for this pipeline -->
+        <node pkg="nodelet" type="nodelet" args="manager"
+                name="nodelet_manager" output="screen"/>
+
+        <node pkg="nodelet" type="nodelet" name="cloudify"
+                args="load sparse_depth_image_proc/point_cloud_xyz nodelet_manager --no-bond">
+            <remap from="image_rect" to="/camera/depth/image_raw"/>
+            <remap from="points" to="/jaime/safety/point_cloud"/>
+            <remap from="camera_info" to="camera/depth/camera_info"/>
             <rosparam>
-                num_points: 1000
-                max_range: 3
+                        range_max: 4
             </rosparam>
           </node>
 
@@ -16,7 +21,7 @@
             <rosparam file="$(find jaime_bringup)/params/navigation/safety_layer.yaml" command="load" />
             <remap from="~safe_vel" to="/jaime/nav/safety/cmd_vel" />
             <remap from="base_velocity" to="/jaime/nav/mux/cmd_vel" />
-            <remap from="odom" to="/jaime/odom" />
+            <remap from="/odom" to="/jaime/odom" />
           </node>
     
   </group>
