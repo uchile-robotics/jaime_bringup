@@ -2,7 +2,7 @@
 # Global Costmap
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-static_map: true
+#static_map: true
 
 # Sequence of plugin specifications, one per layer.
 # Each specification is a dictionary with name and type fields.
@@ -19,7 +19,7 @@ plugins:
 
 # The global frame for the costmap to operate in.
 # global_frame (string, default: "/map")
-global_frame: /map
+global_frame: map
     
 
 # Rate parameters
