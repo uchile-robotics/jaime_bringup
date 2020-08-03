@@ -13,7 +13,7 @@ GlobalPlanner:
  # NOTE: if you are using a layered costmap_2d costmap with a voxel or obstacle layer, you
  # must also set the track_unknown_space param for that layer to be true, or it will convert
  # all your unknown space to free space (which planner will then happily go right through). 
- allow_unknown: false
+ allow_unknown: true
 
  # Tolerance on the goal point for the planner.
  default_tolerance: 1.0
@@ -22,13 +22,13 @@ GlobalPlanner:
  publish_potential: true
 
  # use dijkstra's (true) or A* (false) algorithm.
- use_dijkstra: false
+ use_dijkstra: true
 
  # If true, use the quadratic approximation of the potential. Otherwise, use a simpler calculation. 
  use_quadratic: true
 
  # If true, create a path that follows the grid boundaries. Otherwise, use a gradient descent method. 
- use_grid_path: false
+ use_grid_path: true
 
  # If for some reason, you want global_planner to exactly mirror the behavior of navfn, set
  # this to true (and use the defaults for the other boolean parameters) 

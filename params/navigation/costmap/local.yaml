@@ -19,8 +19,8 @@ plugins:
 
 # The global frame for the costmap to operate in.
 # (string, default: "/map")
-global_frame: jaime_tf/odom
-
+#global_frame: jaime_tf/odom
+global_frame: map
 
 # Rate parameters
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -31,7 +31,7 @@ update_frequency: 10.0
 
 # The frequency in Hz for the map to be publish display information. 
 # publish_frequency (double, default: 0.0)
-publish_frequency: 2.0
+publish_frequency: 0.0
 
 
 # Map management parameters
@@ -75,6 +75,7 @@ static_layer:
   use_maximum: false
   trinary_costmap: true
 
+# TODO Revisar bien esta parte
 static_obstacles_layer:
   map_topic: "/jaime/knowledge/map/map_full"
   first_map_only: true

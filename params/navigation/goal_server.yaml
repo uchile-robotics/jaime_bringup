@@ -20,7 +20,7 @@ input_initial_pose_topic: "/jaime/nav/goal_server/initialpose"
 output_initial_pose_topic: "/jaime/nav/initialpose"
 
 # where to obtain the map
-map_service: "/map"
+map_service: "/static_map"
 
 
 

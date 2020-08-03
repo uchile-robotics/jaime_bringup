@@ -57,7 +57,7 @@ TrajectoryPlannerROS:
  heading_lookahead: 0.325 # how far to look ahead when scoring in-place rotations
  heading_scoring_timestep: 0.8 # how far to look ahead in time when ...
 
- dwa: false  # whether to use DWA(recommended) or Trajectory Rollout
+ dwa: true  # whether to use DWA(recommended) or Trajectory Rollout
 
  publish_cost_grid_pc: true # publish cost grids (goal, path, occ, total)
  global_frame_id: jaime_tf/odom
