@@ -28,14 +28,15 @@
 		<rosparam file="$(find jaime_bringup)/params/navigation/costmap/common.yaml" command="load" ns="local_costmap"/>
 		<rosparam file="$(find jaime_bringup)/params/navigation/costmap/local.yaml"  command="load" ns="local_costmap"/>
 		
-		<!-- rewrite  observation_sources when use_rgbd is set to true -->
+		<!-- rewrite  observation_sources when use_rgbd is set to true 
  		<param if="$(arg use_rgbd)"
 			name="global_costmap/obstacle_layer/observation_sources"
 			value="laser_front_sensor laser_rear_sensor rgbd_head_scan_sensor"/>
 		<param if="$(arg use_rgbd)"
 			name="local_costmap/obstacle_layer/observation_sources" 
 			value="laser_front_sensor laser_rear_sensor rgbd_head_scan_sensor"/>
- 
+		-->
+
 		<!-- planner parameters -->
 		<rosparam file="$(find jaime_bringup)/params/navigation/planner/$(arg global_planner).yaml" command="load"/>
 		<rosparam file="$(find jaime_bringup)/params/navigation/planner/$(arg local_planner).yaml" command="load"/>
