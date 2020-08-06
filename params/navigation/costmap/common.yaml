@@ -27,7 +27,7 @@ robot_base_frame: jaime_tf/base_link
 # global_frame and robot_base_frame parameters is transform_tolerance seconds
 # older than ros::Time::now(), then the navigation stack will stop the robot. 
 # transform_tolerance (double, default: 0.2)
-transform_tolerance: 0.2
+transform_tolerance: 0.6
 
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
