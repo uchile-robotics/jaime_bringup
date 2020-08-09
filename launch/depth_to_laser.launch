@@ -16,7 +16,7 @@ output="screen" >
 
  <remap from="cloud_in" to="/camera/depth/points"/>
     <remap from="scan" to="xbox_kinetic/scan" />
-    <param name="target_frame" value="jaime_tf/link_palo"/>
+    <param name="target_frame" value="jaime_tf/laser_link"/>
     <rosparam>
         min_height: 0.0
         max_height: 1.0

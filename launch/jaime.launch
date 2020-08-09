@@ -35,7 +35,8 @@
 	</include>  
     </group>
 	<include file="$(find uchile_tf)/launch/transformers.launch"/>
-	<include file="$(find uchile_safety)/launch/safety_jaime.launch"/>
+	<!-- include file="$(find uchile_safety)/launch/safety_jaime.launch"/-->
+	<include file="$(find robot_status)/launch/status.launch"/>
 
 	<include file="$(find arduino_controller)/launch/arduino_controller.launch"/>
 	<include file="$(find battery_info)/launch/battery.launch"/>
