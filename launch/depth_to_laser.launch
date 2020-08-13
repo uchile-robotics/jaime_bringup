@@ -5,9 +5,9 @@
 
 <node pkg="nodelet" type="nodelet" name="cloudify"
         args="load depth_image_proc/point_cloud_xyz nodelet_manager --no-bond">
-    <remap from="image_rect" to="camera/depth/image_rect_raw"/>
+    <remap from="image_rect" to="jaime/camera/depth/image_rect_raw"/>
     <remap from="points" to="camera/depth/points"/>
-    <remap from="camera_info" to="camera/depth/camera_info"/>
+    <remap from="camera_info" to="jaime/camera/depth/camera_info"/>
   </node>
 
    
