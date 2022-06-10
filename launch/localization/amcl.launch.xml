@@ -5,9 +5,9 @@
     <!-- static map server -->
     <include file="$(find uchile_maps)/launch/map_server.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-	<arg name="robot" value="jaime"/>
+	<arg name="robot" value="kobuki"/>
     </include>
-    
+
 
     <!-- Map analyzer -->
     <include file="$(find uchile_maps)/launch/map_analyzer.launch"/>
@@ -23,7 +23,7 @@
     <!-- amcl -->
     <node pkg="amcl" type="amcl" name="amcl" respawn="true" output="screen">
         <!--remap from="/jaime/xbox_kinetic/scan" to="/jaime/nav/scan"/-->
-        <remap from="/scan" to="/jaime/xbox_kinetic/scan"/>
+        <remap from="/scan" to="/scan"/>
         <remap from="map" to="/map"/>
         <rosparam file="$(find jaime_bringup)/params/localization/amcl.yaml" command="load"/>
     </node>

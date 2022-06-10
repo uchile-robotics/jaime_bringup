@@ -2,20 +2,20 @@
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
       <remap from="/scan" to ="/scan"/>
       <rosparam>
-        maxUrange: 2.0
+        maxUrange: 3.8
         base_frame: base_link
         map_update_interval: 0.15
-        minimumScore: 250        <!-- poner mas de 600 que tan bueno es el escaneo laser-->
+        minimumScore: 650     <!-- poner mas de 600 que tan bueno es el escaneo laser-->
         linearUpdate: 0.5
         angularUpdate: 0.218
         temporalUpdate: 0.5
-        xmin: -7
-        ymin: -7
-        xmax: 7
-        ymax: 7
-        maxRange: 2.4
-        particles: 80
-        iterations: 5
+        xmin: -14
+        ymin: -14
+        xmax: 14
+        ymax: 14
+        maxRange: 4
+        particles: 200
+        iterations: 10
         srr: 0.01
         srt: 0.02
         str: 0.01

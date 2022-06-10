@@ -1,16 +1,16 @@
 
-# if not specified, all parameters are in [m],[s] 
+# if not specified, all parameters are in [m],[s]
 
 # tf info
 map_frame: map
-base_frame: jaime_tf/base_link
+base_frame: base_link
 tf_buffer_size: 3.0
 
 # tracking parameters
 goal_almost_reach_radius: 0.3
 goal_reach_degree_th: 10.0
 
-# listen topics 
+# listen topics
 pose_topic: "/jaime/nav/amcl_pose"
 goal_topic: "/jaime/nav/goal_server/goal"
 obstacles_topic: "/jaime/nav/move_base/global_costmap/inflated_obstacles"
