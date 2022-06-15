@@ -48,7 +48,7 @@
 		<param name="GlobalPlanner/allow_unknown" value="true" if="$(arg slam)"/>
 
 		<!-- remapping -->
-		<remap from="cmd_vel" to="move_base/cmd_vel"/>
+		<remap from="/mobile_base/commands/velocity" to="/mobile_base/commands/velocity"/>
 
 	</node>
 
