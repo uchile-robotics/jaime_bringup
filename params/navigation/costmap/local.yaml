@@ -15,7 +15,7 @@ plugins:
 
 
 # Coordinate frame and tf parameters
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # The global frame for the costmap to operate in.
 # (string, default: "/map")
@@ -23,32 +23,32 @@ plugins:
 global_frame: map
 
 # Rate parameters
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# The frequency in Hz for the map to be updated. 
+# The frequency in Hz for the map to be updated.
 # update_frequency (double, default: 5.0)
 update_frequency: 10.0
 
-# The frequency in Hz for the map to be publish display information. 
+# The frequency in Hz for the map to be publish display information.
 # publish_frequency (double, default: 0.0)
 publish_frequency: 0.0
 
 
 # Map management parameters
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Whether or not to use a rolling window version of the costmap. If the 
-# static_map parameter is set to true, this parameter must be set to false. 
+# Whether or not to use a rolling window version of the costmap. If the
+# static_map parameter is set to true, this parameter must be set to false.
 # rolling_window (bool, default: false)
 rolling_window: true
 
-# If true the full costmap is published to "~<name>/grid" every update. If 
-# false only the part of the costmap that has changed is published on the 
-# "~<name>/grid_updates" topic. 
+# If true the full costmap is published to "~<name>/grid" every update. If
+# false only the part of the costmap that has changed is published on the
+# "~<name>/grid_updates" topic.
 # always_send_full_costmap (bool, default: false)
 always_send_full_costmap: false
-    
-# The following parameters can be overwritten by some layers, namely the 
+
+# The following parameters can be overwritten by some layers, namely the
 # static map layer:
 #
 # - The width of the map in meters.           (int, default: 10)
@@ -56,7 +56,7 @@ always_send_full_costmap: false
 # - The resolution of the map in meters/cell. (double, default: 0.05)
 # - The x origin of the map in the global frame in meters. (double, default: 0.0)
 # - The y origin of the map in the global frame in meters. (double, default: 0.0)
-# 
+#
 width: 3
 height: 3
 resolution: 0.02
@@ -77,11 +77,9 @@ static_layer:
 
 # TODO Revisar bien esta parte
 static_obstacles_layer:
-  map_topic: "/jaime/knowledge/map/map_full"
+  map_topic: "/kobuki/knowledge/map/map_full"
   first_map_only: true
   subscribe_to_updates: false
   track_unknown_space: true
   use_maximum: true
   trinary_costmap: true
-
-

@@ -1,10 +1,10 @@
 
-/jaime/nav/move_base:
+/move_base:
  # generic global planner:
  # - works with problems :(
  # - sometimes it throws an error even when a path can be found
  # - A* plans are TOO optimal, giving paths very very very close to obstacles :(
- base_global_planner: "global_planner/GlobalPlanner" 
+ base_global_planner: "global_planner/GlobalPlanner"
 
 # ---- global planner ----
 GlobalPlanner:
@@ -12,7 +12,7 @@ GlobalPlanner:
  # Specifies whether or not to allow the planner to create plans that traverse unknown space.
  # NOTE: if you are using a layered costmap_2d costmap with a voxel or obstacle layer, you
  # must also set the track_unknown_space param for that layer to be true, or it will convert
- # all your unknown space to free space (which planner will then happily go right through). 
+ # all your unknown space to free space (which planner will then happily go right through).
  allow_unknown: true
 
  # Tolerance on the goal point for the planner.
@@ -24,22 +24,22 @@ GlobalPlanner:
  # use dijkstra's (true) or A* (false) algorithm.
  use_dijkstra: true
 
- # If true, use the quadratic approximation of the potential. Otherwise, use a simpler calculation. 
+ # If true, use the quadratic approximation of the potential. Otherwise, use a simpler calculation.
  use_quadratic: true
 
- # If true, create a path that follows the grid boundaries. Otherwise, use a gradient descent method. 
+ # If true, create a path that follows the grid boundaries. Otherwise, use a gradient descent method.
  use_grid_path: true
 
  # If for some reason, you want global_planner to exactly mirror the behavior of navfn, set
- # this to true (and use the defaults for the other boolean parameters) 
+ # this to true (and use the defaults for the other boolean parameters)
  old_navfn_behavior: true
 
 
- # plan cost params --> path shape 
+ # plan cost params --> path shape
  lethal_cost: 253
  neutral_cost: 40
  cost_factor:  0.55 # in [0.01, 5.0]
- 
+
 
  # planner_window_x:
  # planner_window_y:
@@ -47,4 +47,4 @@ GlobalPlanner:
  # orientation_mode: 1 # in {0, 1, 2, 3}
 
  # in code, unused: planner_core.cpp, l147
- # planner_costmap_publish_frequency 
+ # planner_costmap_publish_frequency

@@ -11,16 +11,17 @@ goal_almost_reach_radius: 0.3
 goal_reach_degree_th: 10.0
 
 # listen topics
-pose_topic: "/jaime/nav/amcl_pose"
-goal_topic: "/jaime/nav/goal_server/goal"
-obstacles_topic: "/jaime/nav/move_base/global_costmap/inflated_obstacles"
+pose_topic: "/amcl_pose"
+goal_topic: "/goal_server/goal"
+obstacles_topic: "/move_base/global_costmap/inflated_obstacles"
 
 # where to publish the initial pose
-input_initial_pose_topic: "/jaime/nav/goal_server/initialpose"
-output_initial_pose_topic: "/jaime/nav/initialpose"
+input_initial_pose_topic: "/goal_server/initialpose"
+output_initial_pose_topic: "/initialpose"
 
 # where to obtain the map
 map_service: "/static_map"
+#map_service: "/map"
 
 
 
