@@ -1,5 +1,5 @@
 
-/jaime/nav/move_base:
+/mobile_base/commands/velocity:
  base_local_planner: "dwa_local_planner/DWAPlannerROS"
 
 # ----- Local planner -----

@@ -20,7 +20,7 @@ plugins:
 # The global frame for the costmap to operate in.
 # (string, default: "/map")
 #global_frame: jaime_tf/odom
-global_frame: map
+global_frame: /map
 
 # Rate parameters
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -78,6 +78,7 @@ static_layer:
 # TODO Revisar bien esta parte
 static_obstacles_layer:
   map_topic: "/kobuki/knowledge/map/map_full"
+  #map_topic: "/map"
   first_map_only: true
   subscribe_to_updates: false
   track_unknown_space: true
