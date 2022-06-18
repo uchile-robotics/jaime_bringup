@@ -6,7 +6,7 @@
 robot_radius: 0.32
 
 # AJUSTAR FOOTPRINT.. al parecer queda largo para atras
-footprint: [[-0.17,-0.17],[-0.17,0.17],[0.17,0.17],[0.17,-0.17]]
+footprint: [[0,0],[0,0.1],[0.1,0.1],[0.1,0]]
 #footprint: [[0,0],[0,0],[0,0],[0,0]]
 footprint_padding: 0.01
 #footprint_topic: /bender/nav/footprint

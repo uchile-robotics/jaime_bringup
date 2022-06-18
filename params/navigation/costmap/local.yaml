@@ -20,7 +20,7 @@ plugins:
 # The global frame for the costmap to operate in.
 # (string, default: "/map")
 #global_frame: jaime_tf/odom
-global_frame: /map
+global_frame: map
 
 # Rate parameters
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
