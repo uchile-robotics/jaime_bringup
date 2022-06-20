@@ -40,7 +40,7 @@
 
 		<!-- planner parameters -->
 		<rosparam file="$(find jaime_bringup)/params/navigation/planner/$(arg global_planner).yaml" command="load"/>
-		<rosparam file="$(find jaime_bringup)/params/navigation/planner/$(arg local_planner).yaml" command="load"/>
+		<rosparam file="$(find jaime_bringup)/params/navigation/planner/$(arg base_local_planner).yaml" command="load"/>
 
 		<!-- slam specific configuration -->
 		<!-- this will set up an extra dummy parameter for one of the global planners -->
