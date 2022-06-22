@@ -6,7 +6,7 @@
 robot_radius: 0.32
 
 # AJUSTAR FOOTPRINT.. al parecer queda largo para atras
-footprint: [[0,0],[0,0.1],[0.1,0.1],[0.1,0]]
+footprint: [[0,0],[0,0.3],[0.3,0.3],[0.3,0]]
 #footprint: [[0,0],[0,0],[0,0],[0,0]]
 footprint_padding: 0.01
 #footprint_topic: /bender/nav/footprint
@@ -84,7 +84,8 @@ obstacle_layer:
   #
   # this is handled at launchfile level. see move_base.launch.xml
   #
-  observation_sources: "rgbd_head_scan_sensor"
+  #observation_sources: "rgbd_head_scan_sensor"
+  observation_sources: "laser_front_sensor"
   #observation_sources: "laser_front_sensor laser_rear_sensor rgbd_head_scan_sensor"
 
   # How long to keep each sensor reading in seconds. A value of 0.0 will only
