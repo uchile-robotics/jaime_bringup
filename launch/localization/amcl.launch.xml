@@ -1,6 +1,6 @@
 <launch>
 
-    <arg name="map_name"  default="map"/>
+    <arg name="map_name"  default="mapa_robocup_19"/>
 
     <!-- static map server -->
     <include file="$(find uchile_maps)/launch/map_server.launch">
@@ -10,7 +10,7 @@
 
 
     <!-- Map analyzer -->
-    <include file="$(find uchile_maps)/launch/map_analyzer.launch"/>
+    <!--include file="$(find uchile_maps)/launch/map_analyzer.launch"/-->
 
     <!--node pkg="map_server" type="map_server" name="map_server"
 		respawn="true" args="$(find uchile_maps)/maps/$(arg map_name).yaml"/-->
