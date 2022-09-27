@@ -1,7 +1,9 @@
 <launch>
   <!-- Arguments -->
+  
   <arg name="move_forward_only" default="false"/>
   <arg name="map_name"  default="mapa_robocup_19"/>
+  
 
       <!-- static map server -->
   <!--include file="$(find uchile_maps)/launch/map_server.launch">  
@@ -14,11 +16,12 @@
 		respawn="true" args="$(find uchile_maps)/maps/$(arg map_name).yaml"/>
 
   <!-- move_base -->
+  
   <include file="$(find jaime_bringup)/launch/navigation/move_base.launch">
+        <!--remap from="cmd_vel" to="pico"/-->
         <arg name="move_forward_only" value="$(arg move_forward_only)"/>
   </include>
 
-  <remap from="/cmd_vel" to="/cmd_vel"/>
 
 </launch>
 

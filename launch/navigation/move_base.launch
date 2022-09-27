@@ -6,6 +6,7 @@
 
   <!-- move_base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <remap from="cmd_vel" to="pico"/>
     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
     <rosparam file="$(find jaime_bringup)/params/navigation/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find jaime_bringup)/params/navigation/costmap_common_params.yaml" command="load" ns="local_costmap" />

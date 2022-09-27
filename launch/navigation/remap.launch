@@ -1,0 +1,8 @@
+<launch>
+  <!-- Arguments -->
+    <remap from="mobile_base/commands/velocity" to="cmd_vel"/>
+
+      <include file="$(find jaime_gazebo)/launch/jaime.launch"/>
+        
+
+</launch>
