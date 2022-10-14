@@ -4,6 +4,6 @@
 
     <include file="$(find jaime_gazebo)/launch/jaime.launch"/>
     <include file="$(find jaime_bringup)/launch/localization/localization.launch"/>
-    <include file="$(find jaime_bringup)/launch/navigation/jaime_navigation.launch"/>  
+    <include file="$(find jaime_bringup)/launch/navigation/navigation.launch"/>  
 
 </launch>
