@@ -1,7 +1,7 @@
 <launch>
   <!-- Arguments -->
     <remap from="mobile_base/commands/velocity" to="cmd_vel"/>
-    <arg name="robot_real" default="false"/>
+    <arg name="robot_real" default="true"/>
     <group if="$(arg robot_real)">
 
       <include file="$(find kobuki_node)/launch/robot_with_tf.launch"/>
