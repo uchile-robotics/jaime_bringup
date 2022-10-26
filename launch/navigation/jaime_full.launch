@@ -1,7 +1,9 @@
 <launch>
   <!-- Arguments -->
     <remap from="mobile_base/commands/velocity" to="cmd_vel"/>
-    <arg name="robot_real" default="true"/>
+    <arg name="robot_real"     default="false"/>
+    <arg name="map_name"       default="mapa_robocup_19"/>
+    <arg name="worldname"      default="robocup19_home_arena"/>
     <group if="$(arg robot_real)">
 
       <include file="$(find kobuki_node)/launch/robot_with_tf.launch"/>
@@ -11,10 +13,18 @@
 
     <group unless="$(arg robot_real)">
 
-        <include file="$(find jaime_gazebo)/launch/jaime.launch"/>
+        <include file="$(find jaime_gazebo)/launch/jaime.launch">
+          <arg name="worldname" value="$(arg worldname)"/>
+        </include>
 
     </group>
-    <include file="$(find jaime_bringup)/launch/localization/localization.launch"/>
-    <include file="$(find jaime_bringup)/launch/navigation/navigation.launch"/>  
+    <include file="$(find jaime_bringup)/launch/localization/localization.launch">
+      <arg name="map_name" value="$(arg map_name)"/>
+    </include>
+
+    <include file="$(find jaime_bringup)/launch/navigation/navigation.launch">  
+      <arg name="map_name" value="$(arg map_name)"/>
+    </include>
 
 </launch>
+ 
