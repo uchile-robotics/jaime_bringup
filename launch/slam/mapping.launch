@@ -1,6 +1,11 @@
   <launch>
+    <remap from="scan_multi" to="scan"/>
+    <include file="$(find merge_laser)/launch/dp2laser.launch"/>
+
+    <include file="$(find merge_laser)/launch/lasermerger.launch"/>
+
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
-      <remap from="/scan" to ="/scan"/>
+      
       <rosparam>
         maxUrange: 3.8
         base_frame: base_link

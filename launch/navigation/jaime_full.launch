@@ -1,6 +1,8 @@
 <launch>
   <!-- Arguments -->
     <remap from="mobile_base/commands/velocity" to="cmd_vel"/>
+    <remap from="scan" to="scan/hokuyo"/>
+    <!-- <remap from="scan_multi" to="scan"/> -->
     <arg name="robot_real"     default="false"/>
     <arg name="map_name"       default="mapa_robocup_19"/>
     <arg name="worldname"      default="robocup19_home_arena"/>
@@ -17,12 +19,19 @@
           <arg name="worldname" value="$(arg worldname)"/>
         </include>
 
+        <include file="$(find merge_laser)/launch/dp2laser.launch"/>
+
+        <include file="$(find merge_laser)/launch/lasermerger.launch"/>
+
     </group>
+    
     <include file="$(find jaime_bringup)/launch/localization/localization.launch">
+      
       <arg name="map_name" value="$(arg map_name)"/>
     </include>
 
     <include file="$(find jaime_bringup)/launch/navigation/navigation.launch">  
+      
       <arg name="map_name" value="$(arg map_name)"/>
     </include>
 

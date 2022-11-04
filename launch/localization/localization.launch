@@ -5,6 +5,7 @@
       - amcl    : Localization algorithm, merges odometry with laser readings. Good performance.
       - gmapping: Use this to create a new map.
     -->
+    
     <arg name="type"      default="amcl"/>
 
     <!-- This is the name of the map to be loaded on the map server -->
