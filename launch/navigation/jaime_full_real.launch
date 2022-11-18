@@ -1,0 +1,39 @@
+<launch>
+  <!-- Arguments -->
+    <remap from="mobile_base/commands/velocity" to="cmd_vel"/>
+    <remap from="scan" to="hokuyo"/>
+    <!-- <remap from="scan_multi" to="scan"/> -->
+    <arg name="robot_real"     default="true"/>
+    <arg name="map_name"       default="map"/>
+    <arg name="worldname"      default="robocup19_home_arena"/>
+    <group if="$(arg robot_real)">
+      <node pkg="urg_node" type="urg_node" name="hokuyo"/>
+      <include file="$(find kobuki_node)/launch/robot_with_tf.launch"/>
+      <!-- <include file="$(find realsense2_camera)/launch/rs_camera.launch"/> -->
+
+    </group>
+
+    <group unless="$(arg robot_real)">
+
+        <include file="$(find jaime_gazebo)/launch/jaime.launch">
+          <arg name="worldname" value="$(arg worldname)"/>
+        </include> 
+
+    </group>
+
+    <!-- <include file="$(find merge_laser)/launch/dp2laser.launch"/>
+
+    <include file="$(find merge_laser)/launch/lasermerger.launch"/> -->
+
+    <include file="$(find jaime_bringup)/launch/localization/localization.launch">
+      
+      <arg name="map_name" value="$(arg map_name)"/>
+    </include>
+
+    <include file="$(find jaime_bringup)/launch/navigation/navigation.launch">  
+      
+      <arg name="map_name" value="$(arg map_name)"/>
+    </include>
+
+</launch>
+ 
