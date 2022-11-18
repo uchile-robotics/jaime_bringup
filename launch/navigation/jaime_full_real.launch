@@ -17,7 +17,7 @@
 
         <include file="$(find jaime_gazebo)/launch/jaime.launch">
           <arg name="worldname" value="$(arg worldname)"/>
-        </include>
+        </include> 
 
     </group>
 
