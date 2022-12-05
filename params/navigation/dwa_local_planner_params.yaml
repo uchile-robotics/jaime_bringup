@@ -1,3 +1,4 @@
+
 DWAPlannerROS:
 
 # Robot Configuration Parameters
@@ -22,19 +23,19 @@ DWAPlannerROS:
 
 # Goal Tolerance Parametes
   xy_goal_tolerance: 0.3
-  yaw_goal_tolerance: 1
+  yaw_goal_tolerance: 0.2
   latch_xy_goal_tolerance: false
 
 # Forward Simulation Parameters
-  sim_time: 1.5
+  sim_time: 2.0
   vx_samples: 20
   vy_samples: 0
   vth_samples: 100
   controller_frequency: 10.0
 
 # Trajectory Scoring Parameters
-  path_distance_bias: 2.0
-  goal_distance_bias: 1.0
+  path_distance_bias: 32.0
+  goal_distance_bias: 20
   occdist_scale: 0.02
   forward_point_distance: 0.325
   stop_time_buffer: 0.2
