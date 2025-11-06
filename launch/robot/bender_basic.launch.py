@@ -18,15 +18,6 @@ def generate_launch_description():
         'twist_mux.yaml'
     ])
     
-    rosaria2_node = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            PathJoinSubstitution([
-                base_pkg,
-                'launch',
-                'rosaria2.launch.py'
-            ])
-        )
-    )
     lidar_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([
@@ -57,6 +48,5 @@ def generate_launch_description():
     return LaunchDescription([
         joy_node,
         lidar_node,
-        rosaria2_node,
         twist_mux
     ])
