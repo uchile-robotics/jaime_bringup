@@ -1,4 +1,4 @@
-# Bender Bringup
+# Jaime Bringup
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@
 
 ## Introduction
 
-This package provides the launch configurations, parameter files, and map resources required to bring up the **Bender robot** on **ROS 2 Jazzy**.  
+This package provides the launch configurations, parameter files, and map resources required to bring up the **Jaime robot** on **ROS 2 Jazzy**.  
 It integrates the robot’s localization, navigation, and visualization systems into a unified launch structure.
 
 ---
@@ -47,7 +47,7 @@ The package is structured to support different operation modes such as:
 - **ROS 2 Jazzy Jalisco**
 - **Nav2** (`nav2_bringup`, `nav2_msgs`, etc.)
 - **SLAM Toolbox** or **Cartographer**
-- **Robot-specific packages** (`bender_description`, `bender_bringup`, `bender_bringup_interfaces`, etc.)
+- **Robot-specific packages** (`jaime_description`, `jaime_bringup`, `jaime_bringup_interfaces`, etc.)
 
 Remember that even though you can build this package and all its necessary dependencies directly in your pc it is **highly** recommended that you use the docker containers that are located in [uchile_system](https://github.com/uchile-robotics/uchile_system). In that package there are some instructions on how to install it properly (In that docker container you can plug-and-play)
 
