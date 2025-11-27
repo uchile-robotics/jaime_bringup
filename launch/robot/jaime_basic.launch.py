@@ -17,7 +17,16 @@ def generate_launch_description():
         'params',
         'twist_mux.yaml'
     ])
-    
+    kobuki_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                base_pkg,
+                'launch',
+                'kobuki',
+                'kobuki.launch.py'
+            ])
+        )
+    )
     lidar_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([
