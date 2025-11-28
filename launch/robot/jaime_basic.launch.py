@@ -22,7 +22,6 @@ def generate_launch_description():
             PathJoinSubstitution([
                 base_pkg,
                 'launch',
-                'kobuki',
                 'kobuki.launch.py'
             ])
         )
@@ -56,5 +55,6 @@ def generate_launch_description():
     return LaunchDescription([
         joy_node,
         lidar_node,
-        twist_mux
+        twist_mux,
+        kobuki_node
     ])
