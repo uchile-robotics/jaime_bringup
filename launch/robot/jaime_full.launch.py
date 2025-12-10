@@ -3,6 +3,8 @@ from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
+from launch_ros.actions import Node
+from launch.substitutions import Command
 
 def generate_launch_description():
     bringup_pkg = FindPackageShare('jaime_bringup')
@@ -39,8 +41,23 @@ def generate_launch_description():
             ])
         )
     )
+    
+#para el urdf
 
-    # Timer para lanzar localización después de 5s
+    robot_state_publisher_node = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='robot_state_publisher',
+        output='screen',
+        parameters=[{
+            'robot_description': Command([
+                'xacro ',
+                PathJoinSubstitution([description_pkg, 'urdf', 'jaime.xacro'])
+                
+            ])
+        }]
+    )
+        # Timer para lanzar localización después de 5s
     launch_localization = TimerAction(
         period=5.0,
         actions=[localization_node]
@@ -57,4 +74,5 @@ def generate_launch_description():
         basic_node,
         launch_localization,
         launch_navigation,
+        robot_state_publisher_node,
     ])
