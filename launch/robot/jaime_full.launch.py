@@ -10,6 +10,7 @@ def generate_launch_description():
     bringup_pkg = FindPackageShare('jaime_bringup')
     description_pkg = FindPackageShare('jaime_description')
     tablet_pkg = FindPackageShare('jaime_tablet')
+
     display_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([
@@ -42,10 +43,17 @@ def generate_launch_description():
         )
     )
     
-    tablet_node = IncludeLaunchDescription(
+    tablet_camara_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([
                 tablet_pkg, 'launch', 'launch_iriun.py'
+            ])
+        )
+    )
+    tablet_pub_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                tablet_pkg, 'launch', 'iriun_pu.launch.py'
             ])
         )
     )
