@@ -1,0 +1,60 @@
+from launch import LaunchDescription
+from launch_ros.actions import Node
+from launch.actions import IncludeLaunchDescription
+from launch.substitutions import PathJoinSubstitution
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.substitutions import FindPackageShare
+from ament_index_python.packages import get_package_share_directory
+import os
+# This launch file launches the lidar, the base controller and a teleop node
+
+def generate_launch_description():
+    base_pkg = FindPackageShare('jaime_base')
+    sensor_pkg = FindPackageShare('jaime_sensors')
+    joy_pkg = FindPackageShare('jaime_joy')
+    twist_mux_params = PathJoinSubstitution([
+        joy_pkg,
+        'params',
+        'twist_mux.yaml'
+    ])
+    kobuki_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                base_pkg,
+                'launch',
+                'kobuki.launch.py'
+            ])
+        )
+    )
+    lidar_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                sensor_pkg,
+                'launch',
+                'lidar',
+                'rplidar_c1_launch.py'
+            ])
+        )
+    )
+    
+    joy_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                joy_pkg,
+                'launch',
+                'joystick.launch.py'
+            ])
+        )
+    ) 
+    twist_mux = Node(
+            package="twist_mux",
+            executable="twist_mux",
+            parameters=[twist_mux_params],
+            remappings=[('/cmd_vel_out','/cmd_vel')]
+    )
+    return LaunchDescription([
+        joy_node,
+        lidar_node,
+        twist_mux,
+        kobuki_node
+    ])

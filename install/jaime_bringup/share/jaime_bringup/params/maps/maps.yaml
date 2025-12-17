@@ -1,0 +1,3 @@
+yaml_filename: "/home/jaime_ws/src/jaime_bringup/maps/stage_5_may_2025/stage_5_may_2025.pgm"
+topic_name: "map"
+frame_id: "map"

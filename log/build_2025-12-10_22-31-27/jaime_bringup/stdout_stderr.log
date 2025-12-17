@@ -1,0 +1,102 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/jaime_ws/src/jaime_bringup/build/jaime_bringup
+-- Install configuration: ""
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/navigation
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/navigation/navigation_launch.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/robot
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/robot/jaime_full.launch.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/robot/jaime_basic.launch.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/robot/jaime_slam.launch.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/localization
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/localization/slam_toolbox.launch.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/localization/jaime_cartographer.launch.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/localization/localization_launch.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/tools
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/tools/rviz
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup//launch/tools/rviz/jaime.rviz
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps/
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//quimica
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//quimica/quimica_manual.pgm
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//quimica/quimica_autonomo.pgm
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//quimica/quimica_manual.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//quimica/quimica_autonomo.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//31_jul_2025_stage_auto
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//31_jul_2025_stage_auto/mapa.pgm
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//31_jul_2025_stage_auto/mapa.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/build
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/build/.built_by
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/build/COLCON_IGNORE
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/log
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/log/latest
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/log/COLCON_IGNORE
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/log/build_2025-12-10_22-09-44
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/log/build_2025-12-10_22-09-44/logger_all.log
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/log/build_2025-12-10_22-09-44/events.log
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/log/latest_build
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/stage_5_may_2025.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/stage_5_may_2025.pgm
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/local_setup.bash
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/setup.sh
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/local_setup.ps1
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/COLCON_IGNORE
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/setup.ps1
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/local_setup.sh
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/setup.bash
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/local_setup.zsh
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/setup.zsh
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/_local_setup_util_sh.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/_local_setup_util_ps1.py
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//stage_5_may_2025/install/.colcon_install_layout
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//env_30_may_2025
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//env_30_may_2025/env_30_may_2025.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/maps//env_30_may_2025/env_30_may_2025.pgm
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params/
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//maps
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//maps/maps.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//navigation
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//navigation/nav2_params.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/mapper_params_online_async.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/amcl.yaml
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer/trajectory_builder_2d.lua
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer/cartographer_config.lua
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer/no_tengo_idea_porque_lua.txt
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer/map_builder_server.lua
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer/trajectory_builder_3d.lua
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer/pose_graph.lua
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer/trajectory_builder.lua
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/params//localization/cartographer/map_builder.lua
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/ament_index/resource_index/package_run_dependencies/jaime_bringup
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/ament_index/resource_index/parent_prefix_path/jaime_bringup
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/environment/ament_prefix_path.sh
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/environment/ament_prefix_path.dsv
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/environment/path.sh
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/environment/path.dsv
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/local_setup.bash
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/local_setup.sh
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/local_setup.zsh
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/local_setup.dsv
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/package.dsv
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/ament_index/resource_index/packages/jaime_bringup
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/cmake/jaime_bringupConfig.cmake
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/cmake/jaime_bringupConfig-version.cmake
+-- Installing: /home/jaime_ws/src/jaime_bringup/install/jaime_bringup/share/jaime_bringup/package.xml
