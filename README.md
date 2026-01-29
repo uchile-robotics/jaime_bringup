@@ -1,5 +1,4 @@
 # Jaime Bringup
-# hola odette
 ## Table of Contents
 
 - [Jaime Bringup](#jaime-bringup)

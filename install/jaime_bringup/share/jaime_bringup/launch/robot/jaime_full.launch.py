@@ -9,6 +9,7 @@ from launch.substitutions import Command
 def generate_launch_description():
     bringup_pkg = FindPackageShare('jaime_bringup')
     description_pkg = FindPackageShare('jaime_description')
+    tablet_pkg = FindPackageShare('jaime_tablet')
 
     display_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -41,7 +42,15 @@ def generate_launch_description():
             ])
         )
     )
-    
+
+#tablet    
+    tablet_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                tablet_pkg, 'launch', 'tablet_launch.py'
+            ])
+        )
+    )
 #para el urdf
 
     robot_state_publisher_node = Node(

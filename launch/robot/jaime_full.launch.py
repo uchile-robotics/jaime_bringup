@@ -1,3 +1,8 @@
+#en rviz2, revisar que fixed frame sea map, y en map que durability policy sea transient local. 
+#Si no sale el lidar, add -> topic -> scan_raw -> LaserScan
+#es posible que la imagen se demore en aparecer
+
+
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -16,7 +21,11 @@ def generate_launch_description():
             PathJoinSubstitution([
                 description_pkg, 'launch', 'display.launch.py'
             ])
-        )
+        ),
+        launch_arguments={
+            'use_sim_time': 'false',
+            'rviz': 'true'
+        }.items()
     )
 
     basic_node = IncludeLaunchDescription(
@@ -42,52 +51,21 @@ def generate_launch_description():
             ])
         )
     )
-    
-    tablet_camara_node = IncludeLaunchDescription(
+
+#tablet    
+    tablet_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([
-                tablet_pkg, 'launch', 'launch_iriun.py'
+                tablet_pkg, 'tablet_launch.py'
             ])
         )
-    )
-    tablet_pub_node = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            PathJoinSubstitution([
-                tablet_pkg, 'launch', 'iriun_pu.launch.py'
-            ])
-        )
-    )
-#para el urdf
-
-    robot_state_publisher_node = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='robot_state_publisher',
-        output='screen',
-        parameters=[{
-            'robot_description': Command([
-                'xacro ',
-                PathJoinSubstitution([description_pkg, 'urdf', 'jaime.xacro'])
-                
-            ])
-        }]
-    )
-        # Timer para lanzar localización después de 5s
-    launch_localization = TimerAction(
-        period=5.0,
-        actions=[localization_node]
-    )
-
-    # Timer para lanzar navegación después de 10s
-    launch_navigation = TimerAction(
-        period=10.0,
-        actions=[navigation_node]
     )
 
     return LaunchDescription([
         display_node,
         basic_node,
-        launch_localization,
-        launch_navigation,
-        robot_state_publisher_node,
+        localization_node,
+        navigation_node,
+        tablet_node,
     ])
+
